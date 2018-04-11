@@ -17,11 +17,14 @@ Spring 2018
 4. They submit the data back to the db
 
 ### Images
-Workflow Diagram
+__Workflow Diagram__
 ![Workflow 1](/images/Workflow%20Diagram.png)
-Database Schema
+
+__Database Schema__
 ![DB Schema](/images/BeanBarDB.png)
-Use Cases
+
+__Use Cases__
 ![Use Cases](/images/BeanBarUseCases.png)
-Activity Diagram
+
+__Activity Diagram__
 ![Activity Diagram](/images/BeanBarActivityDiagram.png)

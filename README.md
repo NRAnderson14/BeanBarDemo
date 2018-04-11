@@ -15,3 +15,13 @@ Spring 2018
 2. Data Admin selects entry to edit
 3. They make their changes
 4. They submit the data back to the db
+
+### Images
+Workflow Diagram
+![Workflow 1](/images/Workflow%20Diagram.png)
+Database Schema
+![DB Schema](/images/BeanBarDB.png)
+Use Cases
+![Use Cases](/images/BeanBarUseCases.png)
+Activity Diagram
+![Activity Diagram](/images/BeanBarActivityDiagram.png)

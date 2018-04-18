@@ -37,4 +37,17 @@ class DatabaseConnection {
         $res->execute(['ID' => $ID]);
         return $res->fetch();
     }
+	
+	public function submitNewGrower($firstName, $lastName, $location, $farmName, $shortDesc, $longDesc, $approved) {
+		$res = $this->db->prepare(
+			"INSERT INTO Growers (First_Name, Last_Name, Location, Farm_Name, Short_Desc, Long_Desc) VALUES ".
+			"(:firstName, :lastName, :location, :farmName, :shortDesc, :longDesc, :approved)");
+		$res->execute(['firstName' => $firstName, 'lastName' => $lastName, 'location' => $location, 'farmName' => $farmName,
+			'shortDesc' => $shortDesc, 'longDesc' => $longDesc, 'approved' => $approved]);
+	}
+	
+	public function approveGrower($ID) {
+		$res = $this->db->prepare("UPDATE Growers SET Approved = 1 WHERE Grower_ID = :ID");
+		$res->execute(['ID' => $ID]);
+	}
 }

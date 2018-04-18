@@ -2,10 +2,9 @@
 <?php
 foreach ($growers as $row) {
 ?>
-    <p><?= $row['First_Name'] ?></p>
-    <p><?= $row['Last_Name'] ?></p>
-    <p><?= $row['Location'] ?></p>
-    <p><?= $row['Farm_Name'] ?></p>
+    <h4>Name: <?= $row['First_Name'] ?>&nbsp;<?= $row['Last_Name'] ?></h4>
+    <p>Location: <?= $row['Location'] ?></p>
+    <p>Farm Name: <?= $row['Farm_Name'] ?></p>
     <br>
 <?php
 }

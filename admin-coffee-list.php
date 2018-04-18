@@ -1,18 +1,3 @@
-<?php
-$db = new PDO('mysql:host=localhost;dbname=bean_bar', 'root');
-
-include 'database/model.php';
-
-$dbc = new DatabaseConnection($db);
-
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-} else {
-    throw new error("No ID given!");
-}
-
-$coffee = $dbc->getCoffeeByID($id);
-?>
 
 <!DOCTYPE html>
 <html>
@@ -73,37 +58,18 @@ $coffee = $dbc->getCoffeeByID($id);
 <div class="w3-main" style="margin-left:250px">
 
     <div class="w3-row w3-padding-64">
-        <form class="w3-container">
+        <?php
+        $db = new PDO('mysql:host=localhost;dbname=bean_bar', 'root');
 
-            <label>Coffee ID:</label>
-            <input class="w3-input" type="text" value="<?= $coffee['Coffee_ID'] ?>" disabled>
+        include 'database/model.php';
 
-            <label>Coffee Name:</label>
-            <input class="w3-input" type="text" value="<?= $coffee['Coffee_Name'] ?>">
+        $dbc = new DatabaseConnection($db);
 
-            <label>Grower ID:</label>
-            <input class="w3-input" type="text" value="<?= $coffee['Grower_ID'] ?>">
+        $coffees = $dbc->getSubmittedCoffees();
 
-            <label>Roast:</label>
-            <input class="w3-input" type="text" value="<?= $coffee['Roast'] ?>">
-
-            <label>Caffeine Content:</label>
-            <input class="w3-input" type="text" value="<?= $coffee['Caffeination'] ?>">
-
-            <label>Short Description:</label>
-            <input class="w3-input" type="text" value="<?= $coffee['Short_Desc'] ?>">
-
-            <label>Long Description:</label>
-            <textarea class="w3-input"><?= $coffee['Long_Desc'] ?></textarea>
-
-        </form>
+        include 'views/CoffeeList.php';
+        ?>
     </div>
-
-
-    <div class="w3-row w3-padding-32">
-        <button class="w3-btn w3-blue" disabled>Submit</button>
-    </div>
-
 
     <footer id="myFooter">
         <div class="w3-container w3-theme-l2 w3-padding-32">
@@ -145,3 +111,4 @@ $coffee = $dbc->getCoffeeByID($id);
 
 </body>
 </html>
+

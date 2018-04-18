@@ -25,4 +25,10 @@ class DatabaseConnection {
     public function getStores() {
         return $this->db->query('SELECT * FROM Stores');
     }
+
+    public function getCoffeeByID($ID) {
+        $res = $this->db->prepare("SELECT * FROM submitted_coffees WHERE Coffee_ID = :ID");
+        $res->execute(['ID' => $ID]);
+        return $res->fetch();
+    }
 }

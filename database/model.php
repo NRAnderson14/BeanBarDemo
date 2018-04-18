@@ -31,4 +31,10 @@ class DatabaseConnection {
         $res->execute(['ID' => $ID]);
         return $res->fetch();
     }
+
+    public function getGrowerByID($ID) {
+        $res = $this->db->prepare("SELECT * FROM submitted_growers WHERE Grower_ID = :ID");
+        $res->execute(['ID' => $ID]);
+        return $res->fetch();
+    }
 }

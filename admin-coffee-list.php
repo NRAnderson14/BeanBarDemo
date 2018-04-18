@@ -56,6 +56,8 @@
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
+    <h3 class="w3-padding-64">Submitted Coffee Records</h3>
+    <hr>
 
     <div class="w3-row w3-padding-64">
         <?php

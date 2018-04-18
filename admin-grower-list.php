@@ -1,28 +1,3 @@
-<?php
-$db = new PDO('mysql:host=localhost;dbname=bean_bar', 'root');
-
-include 'database/model.php';
-
-$dbc = new DatabaseConnection($db);
-
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-} else {
-    throw new error("No ID given!");
-}
-
-if (isset($_GET['type'])) {
-    $type = $_GET['type'];
-} else {
-    throw new error("No type specified!");
-}
-
-if ($type == "coffee") {
-    $coffee = $dbc->getCoffeeByID($id);
-} else if ($type = "grower") {
-    $grower = $dbc->getGrowerByID($id);
-}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -81,39 +56,22 @@ if ($type == "coffee") {
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
+    <h3 class="w3-padding-64">Submitted Grower Records</h3>
+    <hr>
 
     <div class="w3-row w3-padding-64">
-        <form class="w3-container">
+        <?php
+        $db = new PDO('mysql:host=localhost;dbname=bean_bar', 'root');
 
-            <label><?= $type == "coffee" ? "Coffee" : "Grower" ?> ID:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Coffee_ID'] : $grower['Grower_ID'] ?>" disabled>
+        include 'database/model.php';
 
-            <label><?= $type == "coffee" ? "Coffee Name" : "First Name" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Coffee_Name'] : $grower['First_Name'] ?>">
+        $dbc = new DatabaseConnection($db);
 
-            <label><?= $type == "coffee" ? "Grower ID" : "Last Name" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Grower_ID'] : $grower['Last_Name'] ?>">
+        $growers = $dbc->getSubmittedGrowers();
 
-            <label><?= $type == "coffee" ? "Roast" : "Location" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Roast'] : $grower['Location'] ?>">
-
-            <label><?= $type == "coffee" ? "Caffeination" : "Farm Name" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Caffeination'] : $grower['Farm_Name'] ?>">
-
-            <label>Short Description:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Short_Desc'] : $grower['Short_Desc'] ?>">
-
-            <label>Long Description:</label>
-            <textarea class="w3-input"><?= $type == "coffee" ? $coffee['Long_Desc'] : $grower['Long_Desc'] ?></textarea>
-
-        </form>
+        include 'views/GrowerList.php';
+        ?>
     </div>
-
-
-    <div class="w3-row w3-padding-32">
-        <button class="w3-btn w3-blue" disabled>Submit</button>
-    </div>
-
 
     <footer id="myFooter">
         <div class="w3-container w3-theme-l2 w3-padding-32">
@@ -155,3 +113,4 @@ if ($type == "coffee") {
 
 </body>
 </html>
+

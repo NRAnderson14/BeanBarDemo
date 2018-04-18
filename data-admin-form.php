@@ -85,35 +85,47 @@ if ($type == "coffee") {
     <div class="w3-row w3-padding-64">
         <form class="w3-container">
 
-            <label><?= $type == "coffee" ? "Coffee" : "Grower" ?> ID:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Coffee_ID'] : $grower['Grower_ID'] ?>" disabled>
+            <div class="w3-third w3-container w3-padding-16">
+                <label><?= $type == "coffee" ? "Coffee" : "Grower" ?> ID:</label>
+                <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Coffee_ID'] : $grower['Grower_ID'] ?>" disabled>
+            </div>
 
-            <label><?= $type == "coffee" ? "Coffee Name" : "First Name" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Coffee_Name'] : $grower['First_Name'] ?>">
+            <div class="w3-twothird w3-container w3-padding-16">
+                <label><?= $type == "coffee" ? "Coffee Name" : "First Name" ?>:</label>
+                <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Coffee_Name'] : $grower['First_Name'] ?>">
+            </div>
 
-            <label><?= $type == "coffee" ? "Grower ID" : "Last Name" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Grower_ID'] : $grower['Last_Name'] ?>">
+            <div class="w3-third w3-container w3-padding-16">
+                <label><?= $type == "coffee" ? "Grower ID" : "Last Name" ?>:</label>
+                <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Grower_ID'] : $grower['Last_Name'] ?>">
+            </div>
 
-            <label><?= $type == "coffee" ? "Roast" : "Location" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Roast'] : $grower['Location'] ?>">
+            <div class="w3-twothird w3-container w3-padding-16">
+                <label><?= $type == "coffee" ? "Roast" : "Location" ?>:</label>
+                <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Roast'] : $grower['Location'] ?>">
+            </div>
 
-            <label><?= $type == "coffee" ? "Caffeination" : "Farm Name" ?>:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Caffeination'] : $grower['Farm_Name'] ?>">
+            <div class="w3-third w3-container w3-padding-16">
+                <label><?= $type == "coffee" ? "Caffeination" : "Farm Name" ?>:</label>
+                <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Caffeination'] : $grower['Farm_Name'] ?>">
+            </div>
 
-            <label>Short Description:</label>
-            <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Short_Desc'] : $grower['Short_Desc'] ?>">
+            <div class="w3-twothird w3-container w3-padding-16">
+                <label>Short Description:</label>
+                <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Short_Desc'] : $grower['Short_Desc'] ?>">
+            </div>
 
-            <label>Long Description:</label>
-            <textarea class="w3-input"><?= $type == "coffee" ? $coffee['Long_Desc'] : $grower['Long_Desc'] ?></textarea>
+            <div class="w3-threethird w3-container w3-padding-16">
+                <label>Long Description:</label>
+                <textarea class="w3-input"><?= $type == "coffee" ? $coffee['Long_Desc'] : $grower['Long_Desc'] ?></textarea>
+            </div>
+
+            <div class="w3-third w3-container w3-padding-16">
+                <button class="w3-btn w3-blue" type="submit" disabled>Submit</button>
+            </div>
 
         </form>
     </div>
-
-
-    <div class="w3-row w3-padding-32">
-        <button class="w3-btn w3-blue" disabled>Submit</button>
-    </div>
-
 
     <footer id="myFooter">
         <div class="w3-container w3-theme-l2 w3-padding-32">

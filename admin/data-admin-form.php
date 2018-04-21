@@ -1,7 +1,7 @@
 <?php
 $db = new PDO('mysql:host=localhost;dbname=bean_bar', 'root');
 
-include 'database/model.php';
+include '../database/model.php';
 
 $dbc = new DatabaseConnection($db);
 
@@ -34,8 +34,8 @@ if ($type == "coffee") {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="shortcut icon" href="web-images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="web-images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../web-images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../web-images/favicon.ico" type="image/x-icon">
 <style>
     html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     .w3-sidebar {
@@ -52,7 +52,7 @@ if ($type == "coffee") {
 <div class="w3-top">
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-        <a href="index.php" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
+        <a href="../index.html" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>

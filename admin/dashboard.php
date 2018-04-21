@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <title>BeanBar</title>
@@ -27,7 +26,7 @@
 <div class="w3-top">
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-        <a href="index.php" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
@@ -38,42 +37,25 @@
 </div>
 
 <!-- Sidebar -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
-        <i class="fa fa-remove"></i>
-    </a>
-    <h4 class="w3-bar-item"><b>Our Locations</b></h4>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Winona</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Rochester</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">LaCrosse</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Red Wing</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Wabasha</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Minnesota City</a>
-</nav>
+<?php include '../sidebar.php'; ?>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
-    <h3 class="w3-padding-64">Submitted Coffee Records</h3>
-    <hr>
 
-    <div class="w3-row w3-padding-64">
-        <?php
-        $db = new PDO('mysql:host=localhost;dbname=bean_bar', 'root');
-
-        include 'database/model.php';
-
-        $dbc = new DatabaseConnection($db);
-
-        $coffees = $dbc->getSubmittedCoffees();
-
-        include 'views/CoffeeList.php';
-        ?>
+    <div class="w3-row">
+        <div class="w3-quarter">&nbsp;</div>
+        <div class="w3-padding-64 w3-container w3-margin-right w3-half w3-card">
+            <h3 class="w3-center">Logged in as: <?= $_POST['username'] ?></h3>
+            <hr>
+            <a href="field.php" class="w3-button w3-leftbar">Field Specialists</a><br><br>
+            <a href="data.php" class="w3-button w3-leftbar">Data Admins</a>
+        </div>
     </div>
 
-    <footer id="myFooter">
+    <footer id="myFooter" class="w3-row">
         <div class="w3-container w3-theme-l2 w3-padding-32">
             <h4>Footer</h4>
         </div>
@@ -113,4 +95,3 @@
 
 </body>
 </html>
-

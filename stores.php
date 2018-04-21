@@ -86,11 +86,13 @@ if ($store) {
 
     $coffees = $dbc->getCoffeesByStoreID($store['Store_ID']);
     foreach ($coffees as $row) {
+        $grower = $dbc->getGrowerByID($row['Grower_ID']);
         ?>
         <div class="w3-row">
             <div class="w3-twothird w3-container">
                 <h2 class="w3-text-brown w3-margin-bottom" style="margin-bottom:0;"><?= $row['Coffee_Name'] ?></h2>
                 <p class="w3-text-brown w3-large"><em>Caffeine Content: <?= $row['Caffeination'] ?></em></p>
+                <p class="w3-text-brown w3-large"><a href="growers.php?growerid=<?=$grower['Grower_ID']?>"><?=$grower['Farm_Name']?></a></p>
             </div>
             <div class="w3-twothird w3-container w3-margin-bottom">
                 <p class="w3-text-black">

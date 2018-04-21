@@ -65,7 +65,11 @@ class DatabaseConnection
     {
         $res = $this->db->prepare("SELECT * FROM submitted_growers WHERE Grower_ID = :ID");
         $res->execute(['ID' => $ID]);
-        return $res->fetch();
+        if ($res->rowCount() == 0) {
+            return false;
+        } else {
+            return $res->fetch();
+        }
     }
 
     public function submitNewGrower($firstName, $lastName, $location, $farmName, $shortDesc, $longDesc, $approved)

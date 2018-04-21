@@ -42,6 +42,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
 <?php
 $grower = false;
 if (isset($_GET['growerid'])) {
@@ -49,8 +51,6 @@ if (isset($_GET['growerid'])) {
 }
 if ($grower) {
 ?>
-<div class="w3-main" style="margin-left:250px">
-
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal"><?= $grower['Farm_Name']?></h1>
@@ -82,7 +82,12 @@ if ($grower) {
 </div>
 <?php } else { ?>
 
-<!-- TODO: OH NOES -->
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <h1 class="w3-text-teal">Error</h1>
+            <p>The grower you were looking for does not exist.</p>
+        </div>
+    </div>
 
 <?php } ?>
 

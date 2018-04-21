@@ -47,6 +47,8 @@
      id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
 <?php
 $store = false;
 if (isset($_GET['storeid'])) {
@@ -54,8 +56,6 @@ if (isset($_GET['storeid'])) {
 }
 if ($store) {
 ?>
-<div class="w3-main" style="margin-left:250px">
-
     <div class="w3-row w3-padding-64">
         <div class="w3-twothird w3-container">
             <h1 class="w3-text-teal"><?= $store['Store_Name']?></h1>
@@ -101,8 +101,11 @@ if ($store) {
         <?php
     }
     } else { ?>
-        <div>
-            U DUN GOOFED BOI
+        <div class="w3-row w3-padding-64">
+            <div class="w3-twothird w3-container">
+                <h1 class="w3-text-teal">Error</h1>
+                <p>The store you were looking for does not exist.</p>
+            </div>
         </div>
     <?php } ?>
     <footer id="myFooter">

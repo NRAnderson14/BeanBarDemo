@@ -14,6 +14,6 @@
     $stores = $dbc->getStores();
     foreach ($stores as $store) {
         ?>
-        <a class="w3-bar-item w3-button w3-hover-black" href="stores.php?storeid=<?=$store['Store_ID']?>"><?=$store['Location']?></a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="/BeanBarDemo/stores.php?storeid=<?=$store['Store_ID']?>"><?=$store['Location']?></a>
     <?php } ?>
 </nav>

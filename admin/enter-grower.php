@@ -66,36 +66,36 @@
 
             <div class="w3-twothird w3-container w3-padding-16">
                 <label>First Name:</label>
-                <input class="w3-input" type="text">
+                <input class="w3-input" type="text" name="g_f_name">
             </div>
 
             <div class="w3-third w3-container w3-padding-16">
                 <label>Last Name:</label>
-                <input class="w3-input" type="text">
+                <input class="w3-input" type="text" name="g_l_name">
             </div>
 
             <div class="w3-twothird w3-container w3-padding-16">
                 <label>Location:</label>
-                <input class="w3-input" type="text">
+                <input class="w3-input" type="text" name="loc">
             </div>
 
             <div class="w3-third w3-container w3-padding-16">
                 <label>Farm Name:</label>
-                <input class="w3-input" type="text">
+                <input class="w3-input" type="text" name="farm">
             </div>
 
             <div class="w3-twothird w3-container w3-padding-16">
                 <label>Short Description:</label>
-                <input class="w3-input" type="text">
+                <input class="w3-input" type="text" name="short_desc">
             </div>
 
             <div class="w3-threethird w3-container w3-padding-16">
                 <label>Long Description:</label>
-                <input class="w3-input" type="text">
+                <input class="w3-input" type="text" name="long_desc">
             </div>
 
             <div class="w3-third w3-container w3-padding-16">
-                <button class="w3-btn w3-blue" type="submit" disabled>Submit</button>
+                <button class="w3-btn w3-blue" type="submit">Submit</button>
             </div>
 
         </form>

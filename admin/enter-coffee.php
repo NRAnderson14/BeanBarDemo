@@ -61,7 +61,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
       <div class="w3-third w3-container w3-padding-16">
         <label>Coffee ID:</label>
-        <input class="w3-input" type="text">
+        <input class="w3-input" type="text" disabled>
       </div>
 
       <div class="w3-twothird w3-container w3-padding-16">
@@ -75,12 +75,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       </div>
 
       <div class="w3-twothird w3-container w3-padding-16">
-        <label>Grower Name:</label>
+        <label>Roast:</label>
         <input class="w3-input" type="text">
       </div>
 
       <div class="w3-third w3-container w3-padding-16">
-        <label>Caffeine Content:</label>
+        <label>Caffeination:</label>
         <input class="w3-input" type="text">
       </div>
 

@@ -50,7 +50,8 @@
         <div class="w3-padding-64 w3-container w3-margin-right w3-half w3-card">
             <h3 class="w3-center">Field Specialist Dashboard</h3>
             <hr>
-            <a href="field-spec-form.html" class="w3-button w3-leftbar">Enter New Data</a>
+            <a href="enter-coffee.php" class="w3-button w3-leftbar">Enter New Coffee</a><br><br>
+            <a href="enter-grower.php" class="w3-button w3-leftbar">Enter New Grower</a>
         </div>
     </div>
 

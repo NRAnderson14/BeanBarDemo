@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="shortcut icon" href="web-images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="web-images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../web-images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../web-images/favicon.ico" type="image/x-icon">
 <style>
     html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     .w3-sidebar {
@@ -26,7 +26,7 @@
 <div class="w3-top">
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
+        <a href="../index.php" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
@@ -37,7 +37,18 @@
 </div>
 
 <!-- Sidebar -->
-<?php include '../sidebar.php'; ?>
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+        <i class="fa fa-remove"></i>
+    </a>
+    <h4 class="w3-bar-item"><b>Our Locations</b></h4>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Winona</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Rochester</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">LaCrosse</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Red Wing</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Wabasha</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Minnesota City</a>
+</nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -45,18 +56,56 @@
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
 
-    <div class="w3-row">
-        <div class="w3-quarter">&nbsp;</div>
-        <div class="w3-padding-64 w3-container w3-margin-right w3-half w3-card">
-            <h3 class="w3-center">Logged in as: <?= $_POST['username'] ?></h3>
-            <hr>
-            <a href="field.php" class="w3-button w3-leftbar">Field Specialists</a><br><br>
-            <a href="data.php" class="w3-button w3-leftbar">Data Admins</a><br><br>
-            <a href="manager.php" class="w3-button w3-leftbar">Store Managers</a>
-        </div>
+    <div class="w3-row w3-padding-64">
+        <form class="w3-container">
+
+            <div class="w3-third w3-container w3-padding-16">
+                <label>Grower ID:</label>
+                <input class="w3-input" type="text" disabled>
+            </div>
+
+            <div class="w3-twothird w3-container w3-padding-16">
+                <label>First Name:</label>
+                <input class="w3-input" type="text">
+            </div>
+
+            <div class="w3-third w3-container w3-padding-16">
+                <label>Last Name:</label>
+                <input class="w3-input" type="text">
+            </div>
+
+            <div class="w3-twothird w3-container w3-padding-16">
+                <label>Location:</label>
+                <input class="w3-input" type="text">
+            </div>
+
+            <div class="w3-third w3-container w3-padding-16">
+                <label>Farm Name:</label>
+                <input class="w3-input" type="text">
+            </div>
+
+            <div class="w3-twothird w3-container w3-padding-16">
+                <label>Short Description:</label>
+                <input class="w3-input" type="text">
+            </div>
+
+            <div class="w3-threethird w3-container w3-padding-16">
+                <label>Long Description:</label>
+                <input class="w3-input" type="text">
+            </div>
+
+            <div class="w3-third w3-container w3-padding-16">
+                <button class="w3-btn w3-blue" type="submit" disabled>Submit</button>
+            </div>
+
+        </form>
     </div>
 
-    <footer id="myFooter" class="w3-row">
+
+
+
+
+    <footer id="myFooter">
         <div class="w3-container w3-theme-l2 w3-padding-32">
             <h4>Footer</h4>
         </div>

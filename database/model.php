@@ -87,6 +87,12 @@ class DatabaseConnection
         $res->execute(['ID' => $ID]);
     }
 
+    public function approveCoffee($ID)
+    {
+        $res = $this->db->prepare("UPDATE Coffees SET Approved = 1 WHERE Coffee_ID = :ID");
+        $res->execute(['ID' => $ID]);
+    }
+
     public function insertNewCoffee($name, $gid, $roast, $caff, $short, $long)
     {
         $res = $this->db->prepare("INSERT INTO Coffees (Grower_ID, Coffee_Name, Roast, Caffeination, Short_Desc, Long_Desc)

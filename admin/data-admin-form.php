@@ -83,12 +83,14 @@ if ($type == "coffee") {
 <div class="w3-main" style="margin-left:250px">
 
     <div class="w3-row w3-padding-64">
-        <form class="w3-container">
+        <form class="w3-container" action="approve.php" method="post">
 
             <div class="w3-third w3-container w3-padding-16">
                 <label><?= $type == "coffee" ? "Coffee" : "Grower" ?> ID:</label>
                 <input class="w3-input" type="text" value="<?= $type == "coffee" ? $coffee['Coffee_ID'] : $grower['Grower_ID'] ?>" disabled>
             </div>
+
+            <input type="text" value="<?= $type == "coffee" ? $coffee['Coffee_ID'] : $grower['Grower_ID'] ?>" name="id" hidden>
 
             <div class="w3-twothird w3-container w3-padding-16">
                 <label><?= $type == "coffee" ? "Coffee Name" : "First Name" ?>:</label>
@@ -120,8 +122,20 @@ if ($type == "coffee") {
                 <textarea class="w3-input"><?= $type == "coffee" ? $coffee['Long_Desc'] : $grower['Long_Desc'] ?></textarea>
             </div>
 
+            <?php
+                if ($type == "coffee") {
+                    print '<input type="checkbox" checked name="coffee" hidden>';
+                } else {
+                    print '<input type="checkbox" checked name="grower" hidden>';
+                }
+            ?>
+
+            <div>
+                <label>Approved&nbsp;<input type="checkbox" name="approved"></label>
+            </div>
+
             <div class="w3-third w3-container w3-padding-16">
-                <button class="w3-btn w3-blue" type="submit" disabled>Submit</button>
+                <button class="w3-btn w3-blue" type="submit">Approve</button>
             </div>
 
         </form>

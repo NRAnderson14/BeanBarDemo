@@ -58,45 +58,45 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
-    <form class="w3-container">
+    <form class="w3-container" method="post" action="add.php">
 
       <div class="w3-third w3-container w3-padding-16">
         <label>Coffee ID:</label>
-        <input class="w3-input" type="text">
+        <input class="w3-input" type="text" disabled>
       </div>
 
       <div class="w3-twothird w3-container w3-padding-16">
         <label>Coffee Name:</label>
-        <input class="w3-input" type="text">
+        <input class="w3-input" type="text" name="c_name">
       </div>
 
       <div class="w3-third w3-container w3-padding-16">
         <label>Grower ID:</label>
-        <input class="w3-input" type="text">
+        <input class="w3-input" type="text" name="g_id">
       </div>
 
       <div class="w3-twothird w3-container w3-padding-16">
-        <label>Grower Name:</label>
-        <input class="w3-input" type="text">
+        <label>Roast:</label>
+        <input class="w3-input" type="text" name="roast">
       </div>
 
       <div class="w3-third w3-container w3-padding-16">
-        <label>Caffeine Content:</label>
-        <input class="w3-input" type="text">
+        <label>Caffeination:</label>
+        <input class="w3-input" type="text" name="caff">
       </div>
 
       <div class="w3-twothird w3-container w3-padding-16">
         <label>Short Description:</label>
-        <input class="w3-input" type="text">
+        <input class="w3-input" type="text" name="short_desc">
       </div>
 
       <div class="w3-threethird w3-container w3-padding-16">
         <label>Long Description:</label>
-        <input class="w3-input" type="text">
+        <input class="w3-input" type="text" name="long_desc">
       </div>
 
       <div class="w3-third w3-container w3-padding-16">
-        <button class="w3-btn w3-blue" type="submit" disabled>Submit</button>
+        <button class="w3-btn w3-blue" type="submit">Submit</button>
       </div>
 
     </form>

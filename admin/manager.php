@@ -36,7 +36,6 @@
     </div>
 </div>
 
-<!-- Sidebar -->
 <?php include '../sidebar.php'; ?>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -48,11 +47,10 @@
     <div class="w3-row">
         <div class="w3-quarter">&nbsp;</div>
         <div class="w3-padding-64 w3-container w3-margin-right w3-half w3-card">
-            <h3 class="w3-center">Logged in as: <?= $_POST['username'] ?></h3>
+            <h3 class="w3-center">Store Manager Dashboard</h3>
             <hr>
-            <a href="field.php" class="w3-button w3-leftbar">Field Specialists</a><br><br>
-            <a href="data.php" class="w3-button w3-leftbar">Data Admins</a><br><br>
-            <a href="manager.php" class="w3-button w3-leftbar">Store Managers</a>
+            <a href="#" class="w3-button w3-leftbar">View Carried Coffees</a><br><br>
+            <a href="#" class="w3-button w3-leftbar">Print Coffee Sheets</a>
         </div>
     </div>
 

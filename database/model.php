@@ -87,4 +87,18 @@ class DatabaseConnection
         $res->execute(['ID' => $ID]);
     }
 
+    public function insertNewCoffee($name, $gid, $roast, $caff, $short, $long)
+    {
+        $res = $this->db->prepare("INSERT INTO Coffees (Grower_ID, Coffee_Name, Roast, Caffeination, Short_Desc, Long_Desc)
+                                  VALUES (:gid, :cname, :rst, :cff, :sh, :lg)");
+        $res->execute(['gid' => $gid, 'cname' => $name, 'rst' => $roast, 'cff' => $caff, 'sh' => $short, 'lg' => $long]);
+    }
+
+    public function insertNewGrower($fname, $lname, $farm, $loc, $short, $long)
+    {
+        $res = $this->db->prepare("INSERT INTO Growers (First_Name, Last_Name, Location, Farm_Name, Short_Desc, Long_Desc)
+                                  VALUES (:fn, :ln, :loc, :fan, :sh, :lg)");
+        $res->execute(['fn' => $fname, 'ln' => $lname, 'loc' => $loc, 'fan' => $farm, 'sh' => $short, 'lg' => $long]);
+    }
+
 }

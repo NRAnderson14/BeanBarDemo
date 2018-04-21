@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <title>BeanBar</title>
@@ -8,8 +9,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="shortcut icon" href="web-images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="web-images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../web-images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../web-images/favicon.ico" type="image/x-icon">
 <style>
     html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     .w3-sidebar {
@@ -26,7 +27,7 @@
 <div class="w3-top">
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
+        <a href="../index.html" class="w3-bar-item w3-button w3-theme-l1">BeanBar</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
@@ -36,25 +37,26 @@
     </div>
 </div>
 
+<!-- Sidebar -->
 <?php include '../sidebar.php'; ?>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px">
+<div class="w3-main w3-threequarter" style="margin-left:250px">
+    <h3 class="w3-padding-64 w3-center">Select Coffee To Print</h3>
+    <hr>
 
-    <div class="w3-row">
-        <div class="w3-quarter">&nbsp;</div>
-        <div class="w3-padding-64 w3-container w3-margin-right w3-half w3-card">
-            <h3 class="w3-center">Store Manager Dashboard</h3>
-            <hr>
-            <a href="#" class="w3-button w3-leftbar">View Carried Coffees</a><br><br>
-            <a href="print-coffee-list.php" class="w3-button w3-leftbar">Print Coffee Sheets</a>
-        </div>
+    <div class="w3-row w3-padding-64 w3-container">
+        <?php
+        $coffees = $dbc->getSubmittedCoffees();
+
+        include '../views/PrintCoffeeList.php';
+        ?>
     </div>
 
-    <footer id="myFooter" class="w3-row">
+    <footer id="myFooter">
         <div class="w3-container w3-theme-l2 w3-padding-32">
             <h4>Footer</h4>
         </div>
@@ -94,3 +96,4 @@
 
 </body>
 </html>
+

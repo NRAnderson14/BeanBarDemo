@@ -101,4 +101,12 @@ class DatabaseConnection
         $res->execute(['fn' => $fname, 'ln' => $lname, 'loc' => $loc, 'fan' => $farm, 'sh' => $short, 'lg' => $long]);
     }
 
+    public function getDataForCard($cid)
+    {
+        $res = $this->db->prepare("SELECT Coffee_Name, Farm_Name, Caffeination, co.Short_Desc FROM Coffees co, Growers go 
+                                  WHERE co.Coffee_ID = :ID AND go.Grower_ID = co.Grower_ID");
+        $res->execute(['ID' => $cid]);
+        return $res;
+    }
+
 }

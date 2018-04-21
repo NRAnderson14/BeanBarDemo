@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="shortcut icon" href="web-images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="web-images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../web-images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../web-images/favicon.ico" type="image/x-icon">
 
 <style>
 	#back {
@@ -19,7 +19,7 @@
 			width:5in;
 			margin:.5in;
 			padding-top:.125in;
-			background-image: url("web-images/coffee-card-background.jpeg");
+			background-image: url("../web-images/coffee-card-background.jpeg");
    			background-color: #cccccc;
 		  }
 
@@ -61,13 +61,13 @@
 <body>
 	<div id="back">
 		<div id="card">
-			<h4 id="name">Coffee Name<h4>
+			<h4 id="name"><?= $_GET['c_name'] ?></h4>
 
-			<h4 id="farm"><em>Farm Name</em></h4>
+			<h4 id="farm"><em><?= $_GET['farm_name'] ?></em></h4>
 
-			<p id="caff">Caffeine: ####<p>
+			<p id="caff">Caffeine: <?= $_GET['caff'] ?><p>
 
-			<p id="desc"> Short Description hutnoeah utn uhtoenas uhtnaoh utnaoesht unsaoehtn suhaoetn u<p>
+			<p id="desc"><?= $_GET['desc'] ?><p>
 		</div>
 	</div>
 </body>

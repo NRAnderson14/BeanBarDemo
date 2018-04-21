@@ -57,7 +57,7 @@
 <div class="w3-main" style="margin-left:250px">
 
     <div class="w3-row w3-padding-64">
-        <form class="w3-container">
+        <form class="w3-container" method="post" action="add.php">
 
             <div class="w3-third w3-container w3-padding-16">
                 <label>Grower ID:</label>

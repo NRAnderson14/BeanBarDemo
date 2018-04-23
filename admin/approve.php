@@ -12,4 +12,4 @@ if (isset($_POST['coffee'])) {
     $dbc->approveGrower($_POST['id']);
 }
 
-print 'approved?!';
+header('Location: ./data.php');

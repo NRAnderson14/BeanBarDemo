@@ -44,15 +44,32 @@
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
 
+    <?php
+    $new_coffee_count = $dbc->getSubmittedCoffees()->rowCount();
+    $new_grower_count = $dbc->getSubmittedGrowers()->rowCount();
+
+    if ($new_coffee_count > 1) {
+        $coffee_alert = "w3-pale-red";
+    } else {
+        $coffee_alert = "";
+    }
+
+    if ($new_grower_count > 1) {
+        $grower_alert = "w3-pale-red";
+    } else {
+        $grower_alert = "";
+    }
+    ?>
+
     <div class="w3-row">
         <div class="w3-quarter">&nbsp;</div>
         <div class="w3-padding-64 w3-container w3-margin-right w3-half w3-card">
             <h3 class="w3-center">Data Admin Dashboard</h3>
             <hr>
-            <a href="coffee-list.php" class="w3-button w3-leftbar">View Submitted Coffees</a><br><br>
-            <a href="grower-list.php" class="w3-button w3-leftbar">View Submitted Growers</a><br><br>
-            <a href="grower-list.php" class="w3-button w3-leftbar">View Approved Coffees</a><br><br>
-            <a href="grower-list.php" class="w3-button w3-leftbar">View Approved Growers</a>
+            <a href="coffee-list.php?app=false" class="w3-button w3-leftbar <?= $coffee_alert ?>">View Submitted Coffees</a><br><br>
+            <a href="grower-list.php?app=false" class="w3-button w3-leftbar <?= $grower_alert ?>">View Submitted Growers</a><br><br>
+            <a href="coffee-list.php?app=true" class="w3-button w3-leftbar">View Approved Coffees</a><br><br>
+            <a href="grower-list.php?app=true" class="w3-button w3-leftbar">View Approved Growers</a>
         </div>
     </div>
 

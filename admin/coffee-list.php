@@ -50,7 +50,11 @@
 
     <div class="w3-row w3-padding-64 w3-container">
         <?php
-        $coffees = $dbc->getSubmittedCoffees();
+        if ($_GET['app'] == "true") {
+            $coffees = $dbc->getApprovedCoffees();
+        } else {
+            $coffees = $dbc->getSubmittedCoffees();
+        }
 
         include '../views/CoffeeList.php';
         ?>

@@ -50,7 +50,7 @@
 
     <div class="w3-row w3-padding-64 w3-container">
         <?php
-        $coffees = $dbc->getSubmittedCoffees();
+        $coffees = $dbc->getApprovedCoffees();
 
         include '../views/PrintCoffeeList.php';
         ?>

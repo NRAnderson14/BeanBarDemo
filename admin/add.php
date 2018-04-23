@@ -26,4 +26,4 @@ if (isset($_POST['caff'])) {
     $dbc->insertNewGrower($g_f_name, $g_l_name, $farm, $loc, $short_desc, $long_desc);
 }
 
-print "added your stuff probably";
+header('Location: ./field.php');

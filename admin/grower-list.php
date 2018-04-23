@@ -50,7 +50,12 @@
 
     <div class="w3-row w3-padding-64 w3-container">
         <?php
-        $growers = $dbc->getSubmittedGrowers();
+
+        if ($_GET['app'] == "true") {
+            $growers = $dbc->getApprovedGrowers();
+        } else {
+            $growers = $dbc->getSubmittedGrowers();
+        }
 
         include '../views/GrowerList.php';
         ?>
